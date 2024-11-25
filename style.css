@@ -81,7 +81,6 @@ table {
     text-align: center;
     margin-bottom: 20px;
     table-layout: fixed; /* Garante que as células da tabela se ajustem corretamente */
-    overflow: hidden; /* Impede que o conteúdo da tabela saia do container */
 }
 
 th, td {
@@ -135,7 +134,6 @@ tfoot tr {
     table {
         min-width: 100%; /* Garantir que a tabela ocupe toda a largura disponível */
         width: auto; /* Deixa a largura da tabela adaptável */
-        overflow-x: auto; /* Habilita rolagem horizontal */
     }
 
     table th, table td {
@@ -150,6 +148,5 @@ tfoot tr {
     /* Corrige o problema de overflow da tabela */
     .table-container {
         overflow-x: auto;
-        -webkit-overflow-scrolling: touch; /* Suporte para scroll suave em dispositivos móveis */
     }
 }
