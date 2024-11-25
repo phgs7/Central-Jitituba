@@ -144,7 +144,9 @@ tfoot tr {
     footer p {
         font-size: 1.2em;
         margin: 5px 0;
+        text-align: center;
     }
+    
 
     /* Corrige o problema de overflow da tabela */
     .table-container {
