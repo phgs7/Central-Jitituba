@@ -141,11 +141,16 @@ tfoot tr {
         font-size: 0.9em; /* Ajusta o tamanho da fonte da tabela */
     }
 
+    footer {
+        width: 100%;
+        text-align: center; /* Centraliza o conteúdo dentro do footer */
+    }
+    
     footer p {
         font-size: 1.2em;
         margin: 5px 0;
-        text-align: center;
     }
+    
     
 
     /* Corrige o problema de overflow da tabela */
