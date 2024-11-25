@@ -7,6 +7,7 @@ body {
     padding: 0;
 }
 
+/* Cabeçalho */
 header {
     position: relative;
     text-align: center; /* Centraliza o texto principal */
@@ -63,6 +64,8 @@ header .text-container h1, header .text-container h2 {
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    overflow-x: auto; /* Permite rolagem horizontal */
+    -webkit-overflow-scrolling: touch;
 }
 
 .table-container h2 {
@@ -71,17 +74,20 @@ header .text-container h1, header .text-container h2 {
     margin-bottom: 20px;
 }
 
-/* Estilo da tabela */
 table {
     width: 100%;
+    min-width: 600px; /* Garantir que a tabela tenha um tamanho mínimo */
     border-collapse: collapse;
     text-align: center;
     margin-bottom: 20px;
+    table-layout: fixed; /* Garante que as células da tabela se ajustem corretamente */
+    overflow: hidden; /* Impede que o conteúdo da tabela saia do container */
 }
 
 th, td {
     padding: 10px;
     border: 1px solid #ddd;
+    word-wrap: break-word; /* Quebra o texto se necessário */
 }
 
 th {
@@ -101,65 +107,49 @@ tfoot tr {
 
 /* Responsividade */
 @media (max-width: 768px) {
-    /* Ajuste para telas menores */
+    /* Cabeçalho */
     header {
         padding: 10px;
+        text-align: center;
     }
 
-    /* Organizando logo e textos em uma coluna */
     header .logo-container, header .text-container {
         position: static;
         transform: none;
         margin-top: 10px;
     }
 
-    /* Centralizando os textos */
-    header .text-container {
-        text-align: center;
-        margin-top: 10px; /* Ajusta o espaço superior */
+    header .logo {
+        height: 60px; /* Ajusta o tamanho da logo no celular */
     }
 
-    /* Ajustando o tamanho do logo */
-    header .logo-container img {
-        max-width: 70px; /* Logo menor em telas pequenas */
-        height: auto;
+    header h1, header h2 {
+        font-size: 1.2em; /* Ajusta o tamanho da fonte no celular */
     }
 
-    /* Ajuste do tamanho da fonte do título e subtítulo */
-    header h1 {
-        font-size: 1.8em;
+    /* Tabelas */
+    .table-container {
+        padding: 15px;
     }
 
-    header p {
-        font-size: 1em;
+    table {
+        min-width: 100%; /* Garantir que a tabela ocupe toda a largura disponível */
+        width: auto; /* Deixa a largura da tabela adaptável */
+        overflow-x: auto; /* Habilita rolagem horizontal */
     }
 
-    header .text-container h1,
-    header .text-container h2 {
-        font-size: 1.1em;
-    }
-}
-
-@media (max-width: 480px) {
-    /* Ajustes para telas muito pequenas */
-    header {
+    table th, table td {
         padding: 8px;
+        font-size: 0.9em; /* Ajusta o tamanho da fonte da tabela */
     }
 
-    header h1 {
-        font-size: 1.6em;
-    }
-
-    header p {
-        font-size: 0.9em;
-    }
-
-    header .logo-container img {
-        max-width: 60px; /* Logo ainda menor */
-    }
-
-    header .text-container h1,
-    header .text-container h2 {
+    footer p {
         font-size: 1em;
+    }
+
+    /* Corrige o problema de overflow da tabela */
+    .table-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch; /* Suporte para scroll suave em dispositivos móveis */
     }
 }
